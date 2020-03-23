@@ -1,0 +1,13 @@
+name: 'Footer menu'
+items:
+    -
+        title: Navigation
+        nesting: '0'
+        type: shop-catalog
+        code: ''
+        cmsPage: catalog
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

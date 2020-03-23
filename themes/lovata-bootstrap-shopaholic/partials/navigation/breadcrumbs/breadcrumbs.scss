@@ -1,0 +1,27 @@
+.breadcrumb-list {
+  height: 325px;
+  background-color: #e9ecef;
+  background-size: cover;
+
+  @media screen and (max-width: 576px){
+    height: 275px;
+  }
+
+  .breadcrumb-item {
+    font-weight: 600;
+    color: $gray-800;
+  }
+}
+
+.breadcrumb-link {
+  color: #343a40;
+  transition-timing-function: ease-in;
+  transition-duration: .2s;
+  transition-property: opacity;
+
+  &:hover {
+    color: #343a40;
+    text-decoration: none;
+    opacity: .75;
+  }
+}

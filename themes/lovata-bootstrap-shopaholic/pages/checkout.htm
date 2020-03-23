@@ -1,0 +1,41 @@
+title = "Checkout"
+url = "/checkout"
+layout = "main"
+is_hidden = 0
+
+[PaymentMethodList]
+
+[ShippingTypeList]
+
+[MakeOrder]
+mode = "ajax"
+redirect_on = 1
+redirect_page = "order-complete"
+==
+<?php
+function onInit()
+{
+    $obPluginManager = \System\Classes\PluginManager::instance();
+    $this['location_is_available'] = $obPluginManager->hasPlugin('RainLab.Location');
+}
+?>
+==
+{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
+{% set obCartPositionList = Cart.get(obActiveShippingType) %}
+
+{% set arBreadcrumbs = [
+    {'name': 'Home', 'url': 'index'|page},
+    {'name': 'Checkout', 'url': 'checkout'|page}
+] %}
+
+{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+<div class="container-fluid">
+    {% partial 'product/cart-position-list/cart-position-list' obCartPositionList=obCartPositionList obActiveShippingType=obActiveShippingType %}
+    <div class="row">
+        <div class="px-4 py-3 col-12">
+            {% if obCartPositionList.count > 0 %}
+            {% partial 'form/checkout-form/checkout-form' %}
+            {% endif %}
+        </div>
+    </div>
+</div>

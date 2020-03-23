@@ -1,0 +1,25 @@
+{% if this.page.baseFileName == 'checkout' %}
+<section class="container-fliud breadcrumb-list" style="height: auto;">
+    {% else %}
+    <section class="container-fliud breadcrumb-list d-flex align-items-center justify-content-center"
+             style="background-image: url({{ 'assets/images/banner/all-banner.jpg' | theme }})">
+        {% endif %}
+        <nav class="container" aria-label="breadcrumb">
+            {% if this.page.baseFileName == 'checkout' %}
+            <ol class="breadcrumb bg-transparent pl-0 pr-0">
+                {% else %}
+                <ol class="breadcrumb bg-transparent pl-0 pr-0 justify-content-center">
+                    {% endif %}
+                    {% for item in arBreadcrumbs %}
+                    {% if item.name is not empty and item.url is not empty %}
+                    {% if loop.last %}
+                    <li class="breadcrumb-item active" aria-current="page">{{ item.name }}</li>
+                    {% else %}
+                    <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ item.url }}">{{ item.name }}</a>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+        </nav>
+    </section>

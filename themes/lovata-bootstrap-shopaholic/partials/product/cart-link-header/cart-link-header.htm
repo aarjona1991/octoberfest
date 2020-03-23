@@ -1,0 +1,5 @@
+{% if cart_is_available %}
+    <a href="{{ 'checkout'|page }}" class="header__cart">
+        <i class="fa fa-shopping-cart"></i><p class="mb-0 mr-1">Cart</p><span class="header__cart-badge">{{ Cart.get().count }}</span>
+    </a>
+{% endif %}
