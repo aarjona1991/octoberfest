@@ -8,3 +8,4 @@ require:
     - RainLab.Pages
     - Lovata.Shopaholic
     - Lovata.Toolbox
+translate: config/lang.yaml

@@ -1,3 +1,6 @@
+[localePicker]
+forceUrl = 0
+
 [viewBag]
 snippetProperties[][title] = ""
 snippetProperties[][type] = ""
@@ -6,7 +9,7 @@ snippetProperties[][options][] = ""
 ==
 <header class="header on-top container-fluid fixed-top">
     <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand mr-5" {% if this.page.id != 'index' %}href="{{ 'index'|page }}" aria-label="Go to main page"{% endif %}>{{ this.theme.site_name }}</a>
+        <a class="navbar-brand mr-5" {% if this.page.id != 'index' %}href="{{ 'index'|page }}" aria-label="Go to main page"{% endif %}>{{ site.name|_ }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -65,6 +68,7 @@ snippetProperties[][options][] = ""
                 <li class="social-icon__item"><a href="{{ this.theme.twitter_link }}" class="social-icon__link" role="button" aria-label="Go to twitter plugin page"><i class="fa fa-lg fa-twitter fa-fw"></i></a></li>
                 {% endif %}
             </ul>
+            {% component 'localePicker' %}
         </div>
         {% endif %}
         <div class="col-12 col-lg-auto d-lg-block d-none mb-4 mb-lg-0">
