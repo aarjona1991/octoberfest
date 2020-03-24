@@ -1,0 +1,15 @@
+es:
+    site.name: 'Shopaholic'
+    nav.home: 'Inicio'
+    nav.video: 'Video'
+    title.home: 'Bienvenido'
+uk:
+    site.name: 'My Website'
+    nav.home: 'Home'
+    nav.video: 'Video'
+    title.home: 'Welcome Home'
+pt:
+    site.name: 'Moje web stranice'
+    nav.home: 'Početna'
+    nav.video: 'Video'
+    title.home: 'Dobrodošli'

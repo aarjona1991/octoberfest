@@ -1,0 +1,17 @@
+<h2>What dou yout thing about this post?</h2>
+<div id="formRank">
+<form data-request="{{ __SELF__ }}::onRank" data-request-update="'{{ __SELF__ }}::gracias': '#responseRank'">
+	<input id="rankPost" name="rankPost" min=0 max=5 class="rating"
+		data-glyphicon="false"
+		data-rating-class="rating-fa"
+		value="{{__SELF__.rank}}"
+		step={{__SELF__.step}} 
+		data-size="{{__SELF__.toolsize}}" 
+		data-symbol="{{__SELF__.symbol | raw}}">
+	<input type="hidden" name="rankId" id="rankId" value="{{__SELF__.rankId}}">
+	<input type="hidden" name="rank" id="rank" value="{{__SELF__.rank}}">
+	<div id="responseRank">
+		<button type="submit" class="btn btn-primary">Rank it!</button>
+	</div> 
+</form>
+</div>
